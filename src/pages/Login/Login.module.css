@@ -1,0 +1,22 @@
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.loginBox {
+  border: 1px solid rgb(44, 44, 44);
+  border-radius: 4px;
+  padding: 20px 15px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15vh auto 0;
+  width: 400px;
+}
+
+.remember {
+  margin: 0 auto;
+  width: 160px;
+}
+
+.reset {
+  text-align: right;
+}
