@@ -10,7 +10,7 @@ const Images = React.lazy(() => import('./pages/Images'));
 const Image = React.lazy(() => import('./pages/Image'));
 const Videos = React.lazy(() => import('./pages/Videos'));
 const Video = React.lazy(() => import('./pages/Video/Video'));
-const VideoUpload = React.lazy(() => import('./pages/VideoUpload'));
+const VideoUpload = React.lazy(() => import('./pages/VideoUpload/VideoUpload'));
 
 /**
  * Use Auth function
