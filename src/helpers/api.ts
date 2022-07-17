@@ -2,7 +2,7 @@ import axios from 'axios';
 
 interface Result {
   success: boolean;
-  items: never[];
+  response: any;
   error: string;
 }
 
@@ -11,14 +11,18 @@ interface Result {
  *
  * @param {string} method Http method
  * @param {string} endpoint Api endpoind
+ * @param {object} [params] Data to send with get method
+ * @param {object} [data] Data to send with post method
  */
 export default async function api(
     method: string,
     endpoint: string,
+    params?: object,
+    data?: object,
 ): Promise<Result> {
   const result:Result = {
     success: false,
-    items: [],
+    response: null,
     error: '',
   };
 
@@ -27,9 +31,11 @@ export default async function api(
       method: method,
       url: `http://localhost:8000/api/${endpoint}`,
       withCredentials: true,
+      params: params,
+      data: data,
     });
 
-    result.items = response.data.items;
+    result.response = response.data;
   } catch (error) {
     console.log(error);
     window.location.href = '/login';
