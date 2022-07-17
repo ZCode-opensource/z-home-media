@@ -1,0 +1,237 @@
+/* Upload css based on https://codepen.io/maggiben/pen/ApgmmL by Benjamin */
+.uploader {
+  position: absolute;
+  z-index: 5;
+  top: 40%;
+  left: 50%;
+  width: 540px;
+  margin: -120px 0 0 -230px;
+  box-shadow: rgba(29, 29, 29, 0.8) 0 0px 10px, rgba(0, 0, 0, 0.65) 0 0 10px 1px,
+    inset rgba(255, 255, 255, 0.15) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 -1px 0;
+  border-radius: 5px;
+  background-clip: padding-box;
+  overflow: hidden;
+  visibility: visible;
+}
+
+.title {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.title h2 {
+  color: rgba(207, 207, 207, 0.75);
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: 'Arial';
+  text-shadow: 0px 0px 4px rgba(6, 19, 136, 0.25);
+  float: left;
+  font-size: 120%;
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  left: 0px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  margin-top: 41px;
+  padding-bottom: 10px;
+}
+
+.dropzone {
+  color: #f0f0f0;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.45);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 120%;
+  line-height: 32px;
+  box-shadow: inset 0px 0px 0 rgba(0, 0, 0, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+.dropzone:hover {
+  border: 1px solid rgb(51, 128, 56) !important;
+}
+
+.cloudIcon {
+  width: 80px;
+}
+
+.fileInfo {
+  color: #ccc;
+  font-size: 14px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  margin: 10px;
+  line-height: 30px;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 0 rgba(0, 0, 0, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 5px 5px 10px;
+}
+
+.fileInfo p {
+  padding: 0;
+  margin: 0;
+  height: 20px;
+}
+
+.fileInfo span {
+  font-weight: bold;
+  display: inline-block;
+  width: 70px;
+}
+
+.progress {
+  border: 1px solid #222;
+  margin: 10px;
+  height: 10px;
+  margin-bottom: 40px;
+  border-radius: 2px;
+  box-shadow: inset 0px 0px 0 rgba(0, 0, 0, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.bar {
+  width: 0%;
+  height: 100%;
+  background-color: #51c922;
+  box-shadow: 0px 0px 10px 2px #15881f;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.tip {
+  width: 40px;
+  margin-top: 15px;
+  height: 20px;
+  background-color: rgba(255,255,255,1);
+  text-align: center;
+  line-height: 22px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  margin-left: -20px;
+  position:relative;
+  color: #333;
+  opacity: 0.75;
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.tip::before {
+  content:"";
+  border-color: transparent  transparent #000 transparent;
+  border-style:solid;
+  border-width:5px;
+  width:0;
+  height:0;
+  position:absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.tip::after {
+  content:"";
+  border-color: transparent transparent rgba(255,255,255,1) transparent;
+  border-style:solid;
+  border-width:5px;
+  width:0;
+  height:0;
+  position:absolute;
+  top: -9px;
+  left: 50%;
+  margin-left: -5px;
+}
+
+/* Button and drag based on https://codepen.io/gaitho/pen/mjBBLP by samuel muchoki */
+.uploader input[type=file] {
+  display: none;
+}
+
+.selectButton {
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 3px;
+  margin: 0 auto;
+  padding: 2px 15px 0px;
+  transition: all 0.2s ease-in-out;
+  background: #3f71aa;
+  border-color: #1a2e46;
+  cursor: pointer;
+  width: 130px;
+}
+
+/* Based on lds-hourglass https://loading.io/css/ */
+.hourGlass {
+  display: inline-block;
+  position: relative;
+  width: 29px;
+  height: 17px;
+}
+
+.hourGlass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 10px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: hourGlass 1.2s infinite;
+}
+
+@keyframes hourGlass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+.uploadButtonContainer {
+  text-align: center;
+}
+
+.uploadButton {
+  background-image: linear-gradient(#47af50, #01740b);
+  border: 1px solid #016309;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px 15px 2px;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.uploadButton:hover {
+  background-image: linear-gradient(#4bbb54, #01800b);
+  border-color: #00700a;
+  text-decoration: none;
+}
