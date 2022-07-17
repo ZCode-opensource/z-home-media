@@ -200,6 +200,7 @@ nav ul li {
   text-transform: uppercase;
   letter-spacing: 1.6px;
   opacity: 0;
+  visibility: hidden;
 }
 
 nav ul li a {
@@ -219,7 +220,8 @@ nav.show {
 
 nav.show ul li {
   opacity: 1;
-  transition: all 400ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  visibility: visible;
+  transition: all 800ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
   transition-delay: 300ms;
 }
 
@@ -377,3 +379,64 @@ nav.show ul li {
   padding-left: 10px;
   width: 100%;
 }
+
+.video-thumb .img-container {
+  position: relative;
+  width: 320px;
+  height: 180px;
+}
+
+.video-thumb .img-container img {
+  position: absolute;
+  width: 320px;
+  height: 180px;
+}
+
+.video-thumb .top-info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+}
+
+.video-thumb .top-info div{
+  background-color: rgba(0, 0, 0, 0.719);
+  font-size: 14px;;
+  padding: 0 4px;
+  margin: 1px 2px;
+}
+
+.video-thumb .img-container .bottom-info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+}
+
+.video-thumb .img-container .bottom-info div {
+  background-color: rgba(0, 0, 0, 0.719);
+  font-size: 14px;;
+  padding: 0 4px;
+  margin: 1px 2px;
+}
+
+.pagination {
+  display: flex;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  margin: 10px auto;
+  gap: 5px;
+  justify-content: center;
+}
+
+.page-arrow {
+  height: 18px;
+  cursor: pointer;
+}
+
+
+
+
